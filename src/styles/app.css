@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fefefe;
+}
+
+.guide-page {
+    opacity: 0;
+    transition: all 3s;
+} 
+
+.guide-page .main-pic {
+    display: block;
+    width: .86rem;
+    height: .7rem;
+    padding: .93rem 0 .29rem 0;
+    margin: 0 auto;
+}
+
+.guide-page .title {
+    color: black;
+    font-weight: 600;
+    font-size: .2rem;
+    line-height: .23rem;
+    text-align: center;
+}
+
+.guide-page .sub-pic {
+    display: block;
+    width: 2.2rem;
+    height: 1,18rem;
+    margin: 1.73rem auto 0 auto;
+}

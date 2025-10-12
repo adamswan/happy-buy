@@ -1,27 +1,21 @@
-import { useState } from "react";
+import { useRef, useEffect } from "react";
+import Halo from "./images/halo.png";
+import Slogan from "./images/slogan.png";
+import "./styles/app.css";
 
-// 状态的不可变
 function App() {
-  const [info, setInfo] = useState({
-    name: "高圆圆",
-    age: 18,
-  });
+  const guidePageRef = useRef(null);
 
-  const handleClick = () => {
-    const newInfo = { ...info };
-    newInfo.age = newInfo.age + 1;
-    setInfo(newInfo);
-  };
+  useEffect(() => {
+    guidePageRef.current.style.opacity = "1";
+  }, []);
 
   return (
-    <>
-      <p className="border-bottom" style={{ fontSize: "0.2rem" }}>
-        {info.name} - {info.age}
-        {info.name} - {info.age}
-        {info.name} - {info.age}
-      </p>
-      <button onClick={handleClick}>点我修改年龄</button>
-    </>
+    <div ref={guidePageRef} className="page guide-page">
+      <img className="main-pic" src={Halo} />
+      <p className="title">欢乐购</p>
+      <img className="sub-pic" src={Slogan} />
+    </div>
   );
 }
 
