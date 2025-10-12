@@ -15,7 +15,9 @@ function App() {
 
   return (
     <>
-      <p>
+      <p className="border-bottom" style={{ fontSize: "0.2rem" }}>
+        {info.name} - {info.age}
+        {info.name} - {info.age}
         {info.name} - {info.age}
       </p>
       <button onClick={handleClick}>点我修改年龄</button>

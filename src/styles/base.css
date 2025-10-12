@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 1rem 就等于跟标签 <html> 的 font-size 的大小 */
+html {
+  font-size: 100px;
+}
