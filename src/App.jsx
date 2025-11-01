@@ -1,21 +1,20 @@
-import { useRef, useEffect } from "react";
-import Halo from "./images/halo.png";
-import Slogan from "./images/slogan.png";
-import "./styles/app.css";
+import "normalize.css";
+import "./styles/border.css";
+import "./styles/base.css";
+import Guide from "./containers/Guide";
+import Login from "./containers/Login";
+import { HashRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  const guidePageRef = useRef(null);
-
-  useEffect(() => {
-    guidePageRef.current.style.opacity = "1";
-  }, []);
-
   return (
-    <div ref={guidePageRef} className="page guide-page">
-      <img className="main-pic" src={Halo} />
-      <p className="title">欢乐购</p>
-      <img className="sub-pic" src={Slogan} />
-    </div>
+    <>
+      <HashRouter>
+        <Routes>
+          <Route path="/" element={<Guide />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </HashRouter>
+    </>
   );
 }
 

@@ -1,8 +1,6 @@
 // import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import "./styles/border.css";
-import "normalize.css";
 
 // 以375px为基准，设置html的font-size
 document.documentElement.style.fontSize = (document.documentElement.clientWidth / 375) * 100 + "px";
