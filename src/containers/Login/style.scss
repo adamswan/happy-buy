@@ -1,0 +1,65 @@
+.login-page .tab {
+  width: 1.14rem;
+  line-height: 0.21rem;
+  margin: 0 auto;
+  padding: 0.5rem 0 0.77rem 0;
+  font-size: 0.18rem;
+  color: #242424;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-page .tab {
+  .tab-item {
+    display: inline-block;
+    font-weight: bold;
+  }
+  .tab-item-left {
+    color: #73d13d;
+  }
+  .tab-item-right {
+    color: #000;
+  }
+}
+
+.login-page .form {
+  margin-bottom: 0.6rem;
+  .form-item {
+    display: flex;
+    padding: 0.16rem 0.3rem;
+    line-height: 0.24rem;
+    font-size: 0.16rem;
+  }
+  .form-item-title {
+    width: 0.48rem;
+    margin-right: 0.42rem;
+  }
+  .form-item-content {
+    flex: 1;
+    border: none;
+    outline: none;
+    color: #242424;
+  }
+  .form-item-content::placeholder {
+    color: #d9d9d9;
+  }
+}
+
+.login-page {
+  .submit {
+    margin: 0 0.3rem 0.94rem 0.3rem;
+    line-height: 0.5rem;
+    border-radius: 25px;
+    background-color: #73d13d;
+    box-shadow: 0 6px 6px 0 #d9f7be;
+    font-size: 0.16rem;
+    color: #fff;
+    text-align: center;
+  }
+  .notice {
+    color: #cf1322;
+    font-size: 0.16rem;
+    line-height: 0.24rem;
+    text-align: center;
+  }
+}
