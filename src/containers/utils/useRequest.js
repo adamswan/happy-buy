@@ -11,25 +11,26 @@ function useRequest(url, method, payload) {
   const controller = useRef(new AbortController());
 
   // 发请求
-  const sendRequest = async () => {
-    // 每次请求时清空上次的数据
-    setData(null);
-    setError(null);
-    setLoading(false);
-
-    try {
-      const res = await axios.request({
+  const sendRequest = () => {
+    return axios
+      .request({
         url,
         method,
         signal: controller.current.signal,
         data: payload,
+      })
+      .then((response) => {
+        setData(response.data);
+        // 在这里 .then() 要返回数据，只有这样，后续的 .then() 才能接受到你return出去的数据
+        return response.data;
+      })
+      .catch((error) => {
+        setError(error.message);
+        throw new Error(error.message); // 在这里 .catch() 向外抛出错误，只有这样，后续的 .catch() 才能接受到你抛出的错误
+      })
+      .finally(() => {
+        setLoading(false);
       });
-      setData(res.data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
-    }
   };
 
   // 取消请求

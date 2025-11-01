@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./style.scss";
 import useRequest from "../utils/useRequest";
 
@@ -6,22 +6,19 @@ const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setpassword] = useState("");
 
-  const { data, error, sendRequest, cancelRequest } = useRequest("https://v.api.aa1.cn/api/bilibili-rs/", "get");
+  const { sendRequest } = useRequest("https://v.api.aa1.cn/api/bilibili-rs/", "get");
 
   async function handleSubmitBtnClick() {
-    sendRequest();
-    console.log(data);
-    cancelRequest();
+    sendRequest()
+      .then((res) => {
+        console.log("res--", res);
+        alert("登录成功");
+      })
+      .catch((err) => {
+        console.log("err--", err);
+        alert("登录失败");
+      });
   }
-
-  useEffect(() => {
-    if (data) {
-      alert("登录成功");
-    }
-    if (error) {
-      alert("登录失败");
-    }
-  }, [data, error]);
 
   return (
     <>
